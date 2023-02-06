@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Expenses from './components/Expenses.js';
+import Expenses from './components/Expenses/Expenses.js';
 
 function App() {
     const expenses = [
