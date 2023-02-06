@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from './components/Expenses.js';
 
 function App() {
     const expenses = [
@@ -16,12 +16,9 @@ function App() {
             price : 99.99
         }
     ]
-
-
   return (
     <div className="App">
-      <ExpenseItem expenseData={expenses[0]}></ExpenseItem>
-      <ExpenseItem expenseData={expenses[1]}></ExpenseItem>
+        <Expenses expenseData={expenses}></Expenses>
     </div>
   );
 }
