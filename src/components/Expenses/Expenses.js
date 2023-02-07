@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import ExpenseItem from "./ExpenseItem";
 import './Expenses.css'
 import Card from '../UI/Card';
@@ -10,11 +10,21 @@ const Expenses = (props) => {
         setCurrentSelectedYear(selectedYear);
         console.log(`Year data in Expenses.js ${currentSelectedYear}` )
     }
+
+    props.expenseData.map((expense) => {
+        console.log(expense)
+    })
+
     return (
         <Card className="expenses">
             <ExpensesFilter onChangeSelectedYear={selectedYearChangeHandler}></ExpensesFilter>
-            <ExpenseItem expenseData={props.expenseData[0]}></ExpenseItem>
-            <ExpenseItem expenseData={props.expenseData[1]}></ExpenseItem>
+            {
+                props.expenseData.map((expense) => {
+                    return <ExpenseItem
+                        expenseData={expense}
+                        ></ExpenseItem>
+                })
+            }
         </Card>
     )
 }
