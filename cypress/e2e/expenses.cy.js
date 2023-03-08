@@ -11,15 +11,15 @@ describe('Expenses', () => {
   it('can add a new expense', () => {
     const title = 'New boots'
     const amount = 70
-    const date = '2023-01-01'
+    const date = '2023-04-05'
 
     cy.contains('Add New Expense').click()
     cy.get('form #title').type(`${title}`)
     cy.get('form #amount').type(`${amount}`)
     cy.get('form #date').type(`${date}`)
-    cy.contains('Add Expense').click()
+    cy.contains('Add Expense').click({force: true})
 
-    cy.get('.expenses-list li h2').first().should('have.text', 'New hat')
+    cy.get('.expenses-list li h2').first().should('have.text', 'New boots')
 
   })
 
